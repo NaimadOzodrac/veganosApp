@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ingredientes">
+
+    <fragment
+        android:id="@+id/ingredientes"
+        android:name="com.example.veganosyadb.ingredientes"
+        android:label="fragment_ingredientes"
+        tools:layout="@layout/fragment_ingredientes" >
+        <action
+            android:id="@+id/action_ingredientes_to_recetas"
+            app:destination="@id/recetas" />
+    </fragment>
+    <fragment
+        android:id="@+id/recetas"
+        android:name="com.example.veganosyadb.recetas"
+        android:label="fragment_recetas"
+        tools:layout="@layout/fragment_recetas" >
+        <action
+            android:id="@+id/action_recetas_to_receta"
+            app:destination="@id/receta" />
+        <action
+            android:id="@+id/action_recetas_to_ingredientes"
+            app:destination="@id/ingredientes" />
+    </fragment>
+    <fragment
+        android:id="@+id/receta"
+        android:name="com.example.veganosyadb.receta"
+        android:label="fragment_receta"
+        tools:layout="@layout/fragment_receta" >
+        <action
+            android:id="@+id/action_receta_to_ingredientes"
+            app:destination="@id/ingredientes" />
+        <action
+            android:id="@+id/action_receta_to_recetas"
+            app:destination="@id/recetas" />
+    </fragment>
+</navigation>
